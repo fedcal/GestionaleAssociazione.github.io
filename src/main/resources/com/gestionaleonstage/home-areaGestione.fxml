@@ -4,12 +4,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="185.0" prefWidth="319.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gestionaleonstage.gestione.ControllerGestione">
+<AnchorPane prefHeight="185.0" prefWidth="319.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.gestionaleonstage.gestione.ControllerGestione">
     <children>
         <Label layoutX="135.0" layoutY="6.0" text="Gestione " />
-        <Button fx:id="btnAreaEconomica" layoutX="18.0" layoutY="46.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Area Economica" />
-        <Button fx:id="btnInfoLegali" layoutX="176.0" layoutY="46.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Info Legali" />
-        <Button fx:id="btnInfoStatistiche" layoutX="18.0" layoutY="124.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Statistiche" />
+        <Button fx:id="btnAreaEconomica" layoutX="7.0" layoutY="46.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Area Economica" />
+        <Button fx:id="btnInfoLegali" layoutX="185.0" layoutY="46.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Info Legali" />
+        <Button fx:id="btnInfoStatistiche" layoutX="96.0" layoutY="114.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Statistiche" />
     </children>
 
 </AnchorPane>

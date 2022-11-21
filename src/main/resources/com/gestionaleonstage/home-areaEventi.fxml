@@ -4,13 +4,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="areaEventi" prefHeight="185.0" prefWidth="319.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gestionaleonstage.eventi.ControllerEventi">
+<AnchorPane fx:id="areaEventi" prefHeight="185.0" prefWidth="319.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.gestionaleonstage.eventi.ControllerEventi">
     <children>
         <Label layoutX="125.0" layoutY="6.0" text="Area Eventi" />
-        <Button fx:id="btnAggiungiEvento" layoutX="18.0" layoutY="46.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Aggiungi Evento" />
-        <Button fx:id="btnVisualizzaEventi" layoutX="176.0" layoutY="46.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Visualizza Eventi" />
-        <Button fx:id="btnModificaEventi" layoutX="18.0" layoutY="121.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Modifica Evento" />
-        <Button fx:id="btnGGestisciEvento" layoutX="176.0" layoutY="121.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Gestisci Evento" />
+        <Button fx:id="btnAggiungiEvento" layoutX="8.0" layoutY="46.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Aggiungi Evento" />
+        <Button fx:id="btnVisualizzaEventi" layoutX="185.0" layoutY="46.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Visualizza Eventi" />
+        <Button fx:id="btnModificaEventi" layoutX="8.0" layoutY="121.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Modifica Evento" />
+        <Button fx:id="btnGGestisciEvento" layoutX="185.0" layoutY="121.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" text="Gestisci Evento" />
     </children>
 
 </AnchorPane>
