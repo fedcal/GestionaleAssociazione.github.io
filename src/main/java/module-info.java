@@ -1,6 +1,7 @@
 module com.gestionaleonstage {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens com.gestionaleonstage to javafx.fxml;
