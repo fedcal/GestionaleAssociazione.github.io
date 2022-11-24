@@ -32,7 +32,13 @@
             <artifactId>mysql-connector-j</artifactId>
             <version>8.0.31</version>
         </dependency>
-
+        <!-- Javadoc -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.4.1</version>
+            <type>maven-plugin</type>
+        </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -50,6 +56,19 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.4.1</version>
+                <configuration>
+                    <show>private</show>
+                    <reportOutputDirectory>./documentation</reportOutputDirectory>
+                    <sourceFileIncludes>
+                        <include>com.gestionaleonstage.*</include>
+
+                    </sourceFileIncludes>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
