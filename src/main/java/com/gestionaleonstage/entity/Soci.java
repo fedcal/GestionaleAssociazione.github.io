@@ -1,24 +1,92 @@
 package com.gestionaleonstage.entity;
 
 import java.util.Date;
+import java.util.Map;
 
+/**
+ * Classe perr rappresentare l'entità Socio
+ */
 public class Soci {
+    /**
+     * Numero della tesserra del socio
+     */
     private int tessera;
+    /**
+     * Nome del socio
+     */
     private String nome;
+    /**
+     * Cognome del socio
+     */
     private String cognome;
+    /**
+     *Luogo di nascita
+     */
     private String luogoNascita;
+    /**
+     * Indirizzo di residenza
+     */
     private String indirizzo;
+    /**
+     * Città di residenza
+     */
     private String localita;
+    /**
+     * Cap della città
+     */
     private String cap;
+    /**
+     * Provincia della città di residenza
+     */
     private String provincia;
+    /**
+     * Numero di cellulare
+     */
     private String cellulare;
+    /**
+     * Email del socio
+     */
     private String email;
+    /**
+     * Scopo: se è un socio o ha una carica nel direttivo
+      */
     private String scopo;
+    /**
+     * Data di annullamento iscrizione
+     */
     private Date annullamentoIscrizione;
+    /**
+     * Data presentazione domanda
+     */
     private Date dataPresentazione;
+    /**
+     * Data di approvazione della domanda
+     */
     private Date dataApprovazione;
+    /**
+     * Data di nascita
+     */
     private Date dataNascita;
 
+    /**
+     * Cotruttore di classe per valorizzare i campi
+     *
+     * @param tessera Numero della tesserra del socio
+     * @param nome Nome del socio
+     * @param cognome Cognome del socio
+     * @param luogoNascita Luogo di nascita
+     * @param indirizzo Indirizzo di residenza
+     * @param localita Città di residenza
+     * @param cap Cap della città
+     * @param provincia Provincia della città di residenza
+     * @param cellulare Numero di cellulare
+     * @param email Email del socio
+     * @param scopo Scopo: se è un socio o ha una carica nel direttivo
+     * @param annullamentoIscrizione Data di annullamento iscrizione
+     * @param dataPresentazione Data presentazione domanda
+     * @param dataApprovazione Data di approvazione della domanda
+     * @param dataNascita Data di nascita
+     */
     public Soci(int tessera, String nome, String cognome, String luogoNascita, String indirizzo, String localita, String cap, String provincia, String cellulare, String email, String scopo, Date annullamentoIscrizione, Date dataPresentazione, Date dataApprovazione, Date dataNascita) {
         this.tessera = tessera;
         this.nome = nome;
@@ -37,10 +105,20 @@ public class Soci {
         this.dataNascita = dataNascita;
     }
 
+    /**
+     * Ottenere il numero tessera
+     *
+     * @return int
+     */
     public int getTessera() {
         return tessera;
     }
 
+    /**
+     * Impostare il numero della tessera
+     *
+     * @param tessera  int
+     */
     public void setTessera(int tessera) {
         this.tessera = tessera;
     }

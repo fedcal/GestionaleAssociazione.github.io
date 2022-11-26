@@ -17,4 +17,6 @@ module com.gestionaleonstage {
 
     exports com.gestionaleonstage.sviluppo;
     opens com.gestionaleonstage.sviluppo to javafx.fxml;
+
+    exports com.gestionaleonstage.database;
 }
