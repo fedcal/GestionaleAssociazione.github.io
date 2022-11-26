@@ -9,7 +9,7 @@ public class Launcher {
     public static void main(String[] args) {
         DbConnection dbConnection=new DbConnection();
         DbScript dbScript=new DbScript();
-        dbScript.initTable(dbConnection.getConnection());
+        dbScript.initTables(dbConnection.getConnection());
         HomeApplication.main(args);
         try {
             dbConnection.closeConnection();
