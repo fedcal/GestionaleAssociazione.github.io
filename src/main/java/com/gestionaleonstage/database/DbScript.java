@@ -21,20 +21,39 @@ public class DbScript {
      * Inizializzaziione della tabella soci
      * @param db Connection - connessione al db
      */
-    public void initTableSoci(Connection db){
+    public void initTableSoci(Connection db) throws SQLException {
+
+        //SOCI
         String querySoci= " create table if not exists soci(tessera int primary key, data_iscrizione date not null, data_approvazione date not null" +
                 ", cognome varchar(50) not null, nome varchar(50) not null, nascita date not null, luogo_nascita varchar(50), indirizzo varchar(150) not null," +
                 "citta varchar(50) not null, telefono varchar(15) not null, provincia varchar(50) not null, email varchar(200) not null," +
                 "ruolo varchar(30) not null, data_annullamento date, note varchar(500) )";
-        try {
-            Statement statement=db.createStatement();
-            int rs = statement.executeUpdate(querySoci);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
 
-        String queryEventi="";
+        Statement statement=db.createStatement();
+        int rs = statement.executeUpdate(querySoci);
 
+        //EVENTI
+        String queryEventi="create table if not exists eventi(idEventi int primary key, nome varchar(50) not null, descrizione varchar(50) not null)";
+        rs=statement.executeUpdate(queryEventi);
+
+        //EVENTI CREATI
+        String queryEventiCreati="create table if not exists eventiCreati(idCreato int primary key, idEvento int not null, data date not null, foreign key (idEvento) references eventi(idEvento))";
+        rs=statement.executeUpdate(queryEventiCreati);
+
+        //PARTECIPAZIONE
+        String queryPartecipazione="create table if not exists partecipazione(idPartecipazione int primary key, idCreato int, idSocio int, foreign key (idCreato) references eventiCreati(idCreato), foreign key (idSocio) referencies soci(tessera))";
+        rs=statement.executeUpdate(queryPartecipazione);
+
+        //FATTURE
+        String queryFatture="create table if not exists fatture(idFattura int primary key, mittente varchar(50) not null, destinatario varchar(50) not null, data date not null, importo float(10,2))";
+        rs=statement.executeUpdate(queryFatture);
+
+        //SCONTRINO
+        String queryScontrini="create table if not exists scontrini(idScontrino int primary key not null, data date not null, mittente varchar(50))";
+
+        //COSTI EVENTII
+        String queryCostiEventi="create table if not exists costiEventi(idCosto int primary key, idEventoCreato int not null, data date not null, descrizione varchar(500), costo float(10,2) not null, idFattura int not null, scontrino int not null, foreign key (idEventoCreato) references eventiCreati(idCreato),foreign key (idFattura) references fatture(idFattura)";
+        rs=statement.executeUpdate(queryCostiEventi);
     }
 
     /**

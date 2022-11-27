@@ -13,15 +13,16 @@ public class Launcher {
      * Main della classe all'interno del quale evengono effettuate tutte le operazioni preliminari per avviiare l'applicazione
      * @param args argomenti dell'applicazione
      */
-    public static void main(String[] args) {
-        DbConnection dbConnection=new DbConnection();
+    public static void main(String[] args) throws SQLException {
+
+        /*DbConnection dbConnection=new DbConnection();
         DbScript dbScript=new DbScript();
-        dbScript.initTables(dbConnection.getConnection());
+        dbScript.initTableSoci(dbConnection.getConnection());*/
         HomeApplication.main(args);
-        try {
+        /*try {
             dbConnection.closeConnection();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
+        }*/
     }
 }
