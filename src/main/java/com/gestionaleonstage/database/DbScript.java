@@ -24,14 +24,14 @@ public class DbScript {
     public void initTableSoci(Connection db) throws SQLException {
 
         //SOCI
-        String querySoci= " create table if not exists soci(tessera int primary key, data_iscrizione date not null, data_approvazione date not null" +
-                ", cognome varchar(50) not null, nome varchar(50) not null, nascita date not null, luogo_nascita varchar(50), indirizzo varchar(150) not null," +
-                "citta varchar(50) not null, telefono varchar(15) not null, provincia varchar(50) not null, email varchar(200) not null," +
-                "ruolo varchar(30) not null, data_annullamento date, note varchar(500) )";
+        String querySoci= " create table if not exists socio(tessera int primary key, data_iscrizione date not null, data_approvazione date not null" +
+                ", cognome varchar(50) not null, nome varchar(50) not null, nascita date not null, luogo_nascita varchar(50), via varchar(150) not null," +
+                "citta varchar(50) not null,cap varchar(10), telefono varchar(15) not null, provincia varchar(50) not null, email varchar(200) not null," +
+                "data_annullamento date, note varchar(500) )";
 
         Statement statement=db.createStatement();
         int rs = statement.executeUpdate(querySoci);
-
+/*
         //EVENTI
         String queryEventi="create table if not exists eventi(idEventi int primary key, nome varchar(50) not null, descrizione varchar(50) not null)";
         rs=statement.executeUpdate(queryEventi);
@@ -53,7 +53,7 @@ public class DbScript {
 
         //COSTI EVENTII
         String queryCostiEventi="create table if not exists costiEventi(idCosto int primary key, idEventoCreato int not null, data date not null, descrizione varchar(500), costo float(10,2) not null, idFattura int not null, scontrino int not null, foreign key (idEventoCreato) references eventiCreati(idCreato),foreign key (idFattura) references fatture(idFattura)";
-        rs=statement.executeUpdate(queryCostiEventi);
+        rs=statement.executeUpdate(queryCostiEventi);*/
     }
 
     /**
@@ -64,5 +64,8 @@ public class DbScript {
     public LinkedList<Soci> obtainSoci(Connection db){
         //TODO implement obtainSoci that retrival soci's info from dataabse
         return null;
+    }
+    public void exportData(Connection db){
+
     }
 }

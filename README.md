@@ -1,10 +1,10 @@
 # Gestionale associazione
 
 Questo progetto nasce con l'intenzione di creare una desktop application che aiuti nella gestione
-organizzativa di un'associazione. L'implementazione è fatta basasndomi sull'associazione [OnStage](https://www.instagram.com/onstageaps/),
+organizzativa di un'associazione. L'implementazione è fatta basandomi sull'associazione [OnStage](https://www.instagram.com/onstageaps/),
 di cui faccio parte.
 
-In questa sezione descrivo il proggetto, annotando tutti gli sviluppi, il setup dell'ambiente e come installarlo.
+In questa sezione descrivo il progetto, annotando tutti gli sviluppi, il setup dell'ambiente e come installarlo.
 
 ## Analisi dei requisiti
 
@@ -33,12 +33,12 @@ Riporto lo schema ER realizzato attraverso l'applicazione desktop di [draw.io](h
 La prima entità che viene schematizzata è l'entità **socio**, la quale avrà i seguenti campi:
 - **tessera**: numero prograssivo di tessera sociale
 - **data_iscrizione**: data in cui viene presentata la domanda d'iscrizione
-- **data_aaprovazione**: data in cui viene approvata la domanda d'iscrizione
+- **data_aprovazione**: data in cui viene approvata la domanda d'iscrizione
 - **cognome**: cognome dell'associato
 - **nome**: nome dell'associato
 - **nascita**: data di nascita dell'associato
 - **luogo_nascita**: luogo di nascita dell'associato
-- **idirizzo**: indirizzo di casa dell'associato composto da tre campi:
+- **indirizzo**: indirizzo di casa dell'associato composto da tre campi:
   - **citta**: la citrà di residenza
   - **cap**: il cap
   - **via**: la via comprensiva di civico
@@ -50,11 +50,11 @@ La prima entità che viene schematizzata è l'entità **socio**, la quale avrà 
 Ogni associato ha un ruolo all'interno di un'associazione, in questo caso prevediamo come ruoli:
 - *socio semplice*: il quale partecipa alle assemblee associative e alla vita associativa
 - *il presidente*: il presidente dell'associazione che rappresenta l'associazione
-- *il vicepresidente*: il vicepresidente dell'asociazione che svolge le veci del presidente in sua assenza
-- *il segretariio*: i cui compiti sono quelli di verbalizzare le riunioni e altri compiti previsti dallo statuto
+- *il vicepresidente*: il vicepresidente dell'associazione che svolge le veci del presidente in sua assenza
+- *il segretario*: i cui compiti sono quelli di verbalizzare le riunioni e altri compiti previsti dallo statuto
 
 Per rappresentare questa entità all'interno del database viene creata la tabella **ruolo** con i seguenti ruoli:
-- **id_ruolo**: chiave iidentificante il ruolo all'interno della tabella
+- **id_ruolo**: chiave identificante il ruolo all'interno della tabella
 - **titolo**: nome del ruolo
 - **compito**: compiti a lui concessi, con una piccola descrizione
 
@@ -64,26 +64,40 @@ Per rappresentare la relazione tra le due entità ruoli e soci, si crea la tabel
 - **id_ruolo**: id del ruolo associato al socio
 
 Inoltre si cerca di rappresentare i vari eventi che vengono gestiti dall'associazione nei diversi loro aspetti sia economici
-sia di gruppi creati per la gestione. In riferimento a questo viene rappresentata l'erntità evento attraverso la relativa tabella
+sia di gruppi creati per la gestione. In riferimento a questo viene rappresentata l'entità evento attraverso la relativa tabella
 **evento** con le seguenti proprietà:
-- **id_eventp**: codice identificativo dell'evento
+- **id_evento**: codice identificativo dell'evento
 - **nome**: nome dell'evento
 - **descrizione**: descrizione dell'evento
 
-Si vuole rappresentare l'entità che andrà a collezionare tutti glii eventi creati durante l'arco dell'anno, iin questo caso vine 
-istanziata l'entità **evento_creato** la quale possiede i seguentii campi:
+Si vuole rappresentare l'entità che andrà a collezionare tutti gli eventi creati durante l'arco dell'anno, iin questo caso viene 
+istanziata l'entità **evento_creato** la quale possiede i seguenti campi:
 
 - **id_creato**: id dell'evento creato in una certa data
 - **id_evento**: id dell'evento che abbiamo creato
 - **data**: data dell'evento
 
 Molto importante, sia a livello di statistiche sia per migliorare l'organizzazione interna, è il fatto dii poter conoscere
-le persone e i gruppii coinvolti all'interno di un evento. Rappresentiamo quindi la relazione **partecipazione**, con la relativa
-tabella, nella quale inseriamo i seguentii campi:
+le persone e i gruppi coinvolti all'interno di un evento. Rappresentiamo quindi la relazione **partecipazione**, con la relativa
+tabella, nella quale inseriamo i seguenti campi:
 - **id_partecipazione**: identificativo della partecipazione
 - **id_creato**: identificativo dell'evento realizzato
-- **id_soocio**: identificativo del socio che ha contribuito alla creazione dell'evento
-- **gruppo**: gruppo di appertenza del socio che ha contribuito all'evento
+- **id_socio**: identificativo del socio che ha contribuito alla creazione dell'evento
+- **gruppo**: gruppo di appartenenza del socio che ha contribuito all'evento
+
+Ogni evento avrà i suoi costi e i suoi ricavi, quindi possiamo istanziare le due entità **costo_evento** e **entrate_evento**.
+L'entità *costo_Evento* avrà i seguenti campi:
+- **id_costo**: identificativo del costo
+- **id_evento_Creato**: identificativo dell'evento creato
+- **data**: data in cui è stato sostenuto il costo
+- **descrizione**: descrizione del costo
+- **id_fattura**: identificativo della fattura può essere nullo
+- **id_scontrino**: identificativo dello scontrino può essere nullo
+
+Mentre per quanto riguarda l'entità *entrate_evento*:
+- **id_entrata**: identificativo dell'entrata
+- **id_evento_creato**: identificativo dell'evento creato
+- **data**: data in cui è pervenuta l'entrata
 
 
 ## Installazione e Configurazione
