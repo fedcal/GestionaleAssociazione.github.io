@@ -20,17 +20,17 @@ public class Soci {
      */
     private String cognome;
     /**
-     *Luogo di nascita
+     * Luogo di nascita
      */
     private String luogoNascita;
     /**
      * Indirizzo di residenza
      */
-    private String indirizzo;
+    private String via;
     /**
      * Città di residenza
      */
-    private String localita;
+    private String citta;
     /**
      * Cap della città
      */
@@ -48,10 +48,6 @@ public class Soci {
      */
     private String email;
     /**
-     * Scopo: se è un socio o ha una carica nel direttivo
-      */
-    private String scopo;
-    /**
      * Data di annullamento iscrizione
      */
     private Date annullamentoIscrizione;
@@ -68,57 +64,31 @@ public class Soci {
      */
     private Date dataNascita;
 
-    /**
-     * Cotruttore di classe per valorizzare i campi
-     *
-     * @param tessera Numero della tesserra del socio
-     * @param nome Nome del socio
-     * @param cognome Cognome del socio
-     * @param luogoNascita Luogo di nascita
-     * @param indirizzo Indirizzo di residenza
-     * @param localita Città di residenza
-     * @param cap Cap della città
-     * @param provincia Provincia della città di residenza
-     * @param cellulare Numero di cellulare
-     * @param email Email del socio
-     * @param scopo Scopo: se è un socio o ha una carica nel direttivo
-     * @param annullamentoIscrizione Data di annullamento iscrizione
-     * @param dataPresentazione Data presentazione domanda
-     * @param dataApprovazione Data di approvazione della domanda
-     * @param dataNascita Data di nascita
-     */
-    public Soci(int tessera, String nome, String cognome, String luogoNascita, String indirizzo, String localita, String cap, String provincia, String cellulare, String email, String scopo, Date annullamentoIscrizione, Date dataPresentazione, Date dataApprovazione, Date dataNascita) {
+    public Soci(){
+
+    }
+
+    public Soci(int tessera, String nome, String cognome, String luogoNascita, String via, String citta, String cap, String provincia, String cellulare, String email, Date annullamentoIscrizione, Date dataPresentazione, Date dataApprovazione, Date dataNascita) {
         this.tessera = tessera;
         this.nome = nome;
         this.cognome = cognome;
         this.luogoNascita = luogoNascita;
-        this.indirizzo = indirizzo;
-        this.localita = localita;
+        this.via = via;
+        this.citta = citta;
         this.cap = cap;
         this.provincia = provincia;
         this.cellulare = cellulare;
         this.email = email;
-        this.scopo = scopo;
         this.annullamentoIscrizione = annullamentoIscrizione;
         this.dataPresentazione = dataPresentazione;
         this.dataApprovazione = dataApprovazione;
         this.dataNascita = dataNascita;
     }
 
-    /**
-     * Ottenere il numero tessera
-     *
-     * @return int
-     */
     public int getTessera() {
         return tessera;
     }
 
-    /**
-     * Impostare il numero della tessera
-     *
-     * @param tessera  int
-     */
     public void setTessera(int tessera) {
         this.tessera = tessera;
     }
@@ -147,20 +117,20 @@ public class Soci {
         this.luogoNascita = luogoNascita;
     }
 
-    public String getIndirizzo() {
-        return indirizzo;
+    public String getVia() {
+        return via;
     }
 
-    public void setIndirizzo(String indirizzo) {
-        this.indirizzo = indirizzo;
+    public void setVia(String via) {
+        this.via = via;
     }
 
-    public String getLocalita() {
-        return localita;
+    public String getCitta() {
+        return citta;
     }
 
-    public void setLocalita(String localita) {
-        this.localita = localita;
+    public void setCitta(String citta) {
+        this.citta = citta;
     }
 
     public String getCap() {
@@ -195,14 +165,6 @@ public class Soci {
         this.email = email;
     }
 
-    public String getScopo() {
-        return scopo;
-    }
-
-    public void setScopo(String scopo) {
-        this.scopo = scopo;
-    }
-
     public Date getAnnullamentoIscrizione() {
         return annullamentoIscrizione;
     }
@@ -228,7 +190,7 @@ public class Soci {
     }
 
     public Date getDataNascita() {
-        return this.dataNascita;
+        return dataNascita;
     }
 
     public void setDataNascita(Date dataNascita) {
