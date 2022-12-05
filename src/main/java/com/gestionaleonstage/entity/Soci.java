@@ -64,11 +64,15 @@ public class Soci {
      */
     private Date dataNascita;
 
+    private Boolean minorenne;
+
+    private Boolean consenso;
+
     public Soci(){
 
     }
 
-    public Soci(int tessera, String nome, String cognome, String luogoNascita, String via, String citta, String cap, String provincia, String cellulare, String email, Date annullamentoIscrizione, Date dataPresentazione, Date dataApprovazione, Date dataNascita) {
+    public Soci(int tessera, String nome, String cognome, String luogoNascita, String via, String citta, String cap, String provincia, String cellulare, String email, Date annullamentoIscrizione, Date dataPresentazione, Date dataApprovazione, Date dataNascita, Boolean minorenne, Boolean consenso) {
         this.tessera = tessera;
         this.nome = nome;
         this.cognome = cognome;
@@ -83,6 +87,24 @@ public class Soci {
         this.dataPresentazione = dataPresentazione;
         this.dataApprovazione = dataApprovazione;
         this.dataNascita = dataNascita;
+        this.minorenne = minorenne;
+        this.consenso = consenso;
+    }
+
+    public Boolean getMinorenne() {
+        return minorenne;
+    }
+
+    public void setMinorenne(Boolean minorenne) {
+        this.minorenne = minorenne;
+    }
+
+    public Boolean getConsenso() {
+        return consenso;
+    }
+
+    public void setConsenso(Boolean consenso) {
+        this.consenso = consenso;
     }
 
     public int getTessera() {
