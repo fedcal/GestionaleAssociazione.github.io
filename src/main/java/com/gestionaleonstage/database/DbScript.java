@@ -24,16 +24,16 @@ public class DbScript {
     public void initTableSoci(Connection db) throws SQLException {
 
         //SOCI
-        String querySoci= " create table if not exists socio(tessera int primary key, data_iscrizione date not null, data_approvazione date not null" +
+        String querySoci= " create table if not exists socio(tessera int primary key, data_iscrizione date not null, data_approvazione date" +
                 ", cognome varchar(50) not null, nome varchar(50) not null, nascita date not null, luogo_nascita varchar(50), via varchar(150) not null," +
                 "citta varchar(50) not null,cap varchar(10), telefono varchar(15) not null, provincia varchar(50) not null, email varchar(200) not null," +
-                "data_annullamento date, note varchar(500) )";
+                "data_annullamento date, consenso varchar(5), minorenne varchar(5),note varchar(500) )";
 
         Statement statement=db.createStatement();
         int rs = statement.executeUpdate(querySoci);
 /*
         //EVENTI
-        String queryEventi="create table if not exists eventi(idEventi int primary key, nome varchar(50) not null, descrizione varchar(50) not null)";
+        String queryEventi="create table if not exists eventi(idEventi int primary key, nome varchar(50) notnot null, descrizione varchar(50) not null)";
         rs=statement.executeUpdate(queryEventi);
 
         //EVENTI CREATI
@@ -65,7 +65,14 @@ public class DbScript {
         //TODO implement obtainSoci that retrival soci's info from dataabse
         return null;
     }
-    public void exportData(Connection db){
-
+    public boolean insertSocio(String query, Connection db) throws SQLException {
+        boolean queryDone=false;
+        Statement statement=db.createStatement();
+        int rs = statement.executeUpdate(query);
+        if(rs==1){
+            return queryDone=true;
+        }else{
+            return queryDone;
+        }
     }
 }
