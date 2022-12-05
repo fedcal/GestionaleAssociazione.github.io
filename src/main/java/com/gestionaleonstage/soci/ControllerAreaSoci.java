@@ -61,15 +61,25 @@ public class ControllerAreaSoci implements Initializable {
             alert.show();
 
         }else{
-            DbConnection dbConnection= new DbConnection();
-            DbScript dbScript = new DbScript();
-            String consenso=this.consensoNegativo.isSelected() ? "No" : "Si";
-            String minorenne=this.minorenneNegativo.isSelected() ? "No" : "Si";
-            String query="insert into socio values ("+
-                    this.idTessera.getText()+", DATE '"+this.dataPresentazione.getText()+"',"+"NULL"+",'"+this.cognome.getText()+"','"+this.nome.getText()+"',DATE '"+this.dataNascita.getText()+"','"+this.luogoNascita.getText()+"','"+
-                    this.via.getText()+"','"+this.citta.getText()+"','"+this.cap.getText()+"','"+this.cellulare.getText()+"','"+this.provincia.getText()+"','"+this.email.getText()+"',"+"NULL"+",'"+consenso+"','"+minorenne+"',"+"NULL"+")";
-            dbScript.insertSocio(query,dbConnection.getConnection());
-            dbConnection.closeConnection();
+            try{
+                DbConnection dbConnection= new DbConnection();
+                DbScript dbScript = new DbScript();
+                String consenso=this.consensoNegativo.isSelected() ? "No" : "Si";
+                String minorenne=this.minorenneNegativo.isSelected() ? "No" : "Si";
+                String query="insert into socio values ("+
+                        this.idTessera.getText()+", DATE '"+this.dataPresentazione.getText()+"',"+"NULL"+",'"+this.cognome.getText()+"','"+this.nome.getText()+"',DATE '"+this.dataNascita.getText()+"','"+this.luogoNascita.getText()+"','"+
+                        this.via.getText()+"','"+this.citta.getText()+"','"+this.cap.getText()+"','"+this.cellulare.getText()+"','"+this.provincia.getText()+"','"+this.email.getText()+"',"+"NULL"+",'"+consenso+"','"+minorenne+"',"+"NULL"+")";
+                dbScript.insertSocio(query,dbConnection.getConnection());
+                dbConnection.closeConnection();
+                Alert alert=new Alert(Alert.AlertType.INFORMATION);
+                alert.setContentText("Perfetto!!! Il socio è stato aggiunto.");
+                alert.show();
+            }catch (Exception e){
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Errore!!! Non è stato possibile aggiungere il socio.");
+                alert.show();
+            }
+
         }
     }
 
