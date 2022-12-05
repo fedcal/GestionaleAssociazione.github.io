@@ -68,6 +68,13 @@
         </dependency>
     </dependencies>
 
+    <distributionManagement>
+        <repository>
+            <id>GitHub</id>
+            <name>Gestionale associativo</name>
+            <url>https://github.com/fedcal/GestionaleAssociazione</url>
+        </repository>
+    </distributionManagement>
     <build>
         <plugins>
             <plugin>
