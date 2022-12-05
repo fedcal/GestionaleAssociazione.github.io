@@ -4,7 +4,7 @@
 
     <groupId>com</groupId>
     <artifactId>GestionaleOnStage</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <name>GestionaleOnStage</name>
     <packaging>jar</packaging>
 
@@ -93,7 +93,7 @@
         <developerConnection>scm:git:https://github.com/fedcal/GestionaleAssociazione.git
         </developerConnection>
         <url>https://github.com/fedcal/GestionaleAssociazione</url>
-        <tag>0.1</tag>
+        <tag>GestionaleAssociazione</tag>
     </scm>
     <build>
         <plugins>
