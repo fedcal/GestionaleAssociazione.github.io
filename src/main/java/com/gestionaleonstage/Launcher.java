@@ -15,14 +15,15 @@ public class Launcher {
      */
     public static void main(String[] args) throws SQLException {
 
-        /*DbConnection dbConnection=new DbConnection();
+        DbConnection dbConnection=new DbConnection();
         DbScript dbScript=new DbScript();
-        dbScript.initTableSoci(dbConnection.getConnection());*/
-        HomeApplication.main(args);
-        /*try {
+        dbScript.initTableSoci(dbConnection.getConnection());
+        try {
             dbConnection.closeConnection();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }*/
+        }
+        HomeApplication.main(args);
+
     }
 }

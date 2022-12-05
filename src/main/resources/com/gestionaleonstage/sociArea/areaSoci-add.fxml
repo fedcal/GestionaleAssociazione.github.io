@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="576.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gestionaleonstage.soci.ControllerAreaSoci">
+   <children>
+      <Pane layoutX="17.0" layoutY="14.0" prefHeight="162.0" prefWidth="542.0" style="-fx-border-color: black;">
+         <children>
+            <Label layoutX="23.0" layoutY="44.0" text="Tessera" />
+            <TextField fx:id="idTessera" layoutX="84.0" layoutY="40.0" />
+            <Label layoutX="23.0" layoutY="82.0" text="Nome" />
+            <TextField fx:id="nome" layoutX="84.0" layoutY="78.0" />
+            <Label layoutX="23.0" layoutY="116.0" text="Cognome" />
+            <TextField fx:id="cognome" layoutX="84.0" layoutY="112.0" />
+            <Label layoutX="256.0" layoutY="42.0" text="Luogo di nascita" />
+            <Label layoutX="256.0" layoutY="80.0" text="Data di nascita" />
+            <TextField fx:id="luogoNascita" layoutX="370.0" layoutY="38.0" />
+            <TextField fx:id="dataNascita" layoutX="370.0" layoutY="76.0" />
+            <Label layoutX="244.0" layoutY="6.0" text="Generalità" />
+         </children>
+      </Pane>
+      <Pane layoutX="17.0" layoutY="202.0" prefHeight="162.0" prefWidth="542.0" style="-fx-border-color: black;">
+         <children>
+            <TextField fx:id="via" layoutX="107.0" layoutY="41.0" />
+            <TextField fx:id="cap" layoutX="107.0" layoutY="78.0" />
+            <TextField fx:id="citta" layoutX="347.0" layoutY="41.0" />
+            <TextField fx:id="provincia" layoutX="347.0" layoutY="78.0" />
+            <Label layoutX="244.0" layoutY="6.0" text="Residenza" />
+            <Label layoutX="287.0" layoutY="82.0" text="Provincia" />
+            <Label layoutX="14.0" layoutY="44.0" text="Via/Viale/Piazza" />
+            <Label layoutX="287.0" layoutY="45.0" text="Città" />
+            <Label layoutX="14.0" layoutY="82.0" text="Cap" />
+         </children>
+      </Pane>
+      <Pane layoutX="17.0" layoutY="385.0" prefHeight="174.0" prefWidth="542.0" style="-fx-border-color: black;">
+         <children>
+            <TextField fx:id="cellulare" layoutX="107.0" layoutY="47.0" />
+            <TextField fx:id="email" layoutX="107.0" layoutY="84.0" />
+            <TextField fx:id="dataPresentazione" layoutX="342.0" layoutY="49.0" prefHeight="25.0" prefWidth="156.0" />
+            <Label layoutX="230.0" layoutY="6.0" text="Recapiti e Varie" />
+            <Label layoutX="14.0" layoutY="50.0" text="Cellulare" />
+            <Label layoutX="14.0" layoutY="88.0" text="Email" />
+            <Label layoutX="277.0" layoutY="129.0" text="Consenso dati personali:" />
+            <Label layoutX="342.0" layoutY="30.0" text="Data Presentazione domanda" />
+            <RadioButton fx:id="consensoPositivo" layoutX="422.0" layoutY="129.0" mnemonicParsing="false" text="Si" />
+            <RadioButton fx:id="consensoNegativo" layoutX="474.0" layoutY="129.0" mnemonicParsing="false" text="No" />
+            <Label layoutX="339.0" layoutY="96.0" text="Minorenne:" />
+            <RadioButton fx:id="minorennePositivo" layoutX="422.0" layoutY="96.0" mnemonicParsing="false" text="Si" />
+            <RadioButton fx:id="minorenneNegativo" layoutX="474.0" layoutY="96.0" mnemonicParsing="false" text="No" />
+         </children>
+      </Pane>
+      <Button fx:id="socioInput" layoutX="243.0" layoutY="580.0" mnemonicParsing="false" onAction="#insertSocio" text="Inserisci Socio" />
+      <Label layoutX="24.0" layoutY="133.0" text="Consenso dati personali:" />
+   </children>
+</AnchorPane>
