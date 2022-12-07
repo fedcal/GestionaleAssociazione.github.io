@@ -9,51 +9,57 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-public class TableSchema implements Iterable<Column>{
+public class TableSchema {
     private List<Column> tableSchema=new ArrayList<Column>();
+    private HashMap<String,String> mapSQL_JAVATypes=new HashMap<String, String>();
 
-    public TableSchema(DbConnection db, String tableName) throws SQLException{
-        HashMap<String,String> mapSqlType= new HashMap<String, String>();
-        mapSqlType.put("CHAR","string");
-        mapSqlType.put("VARCHAR","string");
-        mapSqlType.put("LONGVARCHAR","string");
-        mapSqlType.put("BIT","string");
-        mapSqlType.put("SHORT","number");
-        mapSqlType.put("INT","number");
-        mapSqlType.put("LONG","number");
-        mapSqlType.put("FLOAT","number");
-        mapSqlType.put("DOUBLE","number");
-        mapSqlType.put("DATE","date");
+    public TableSchema(DbConnection db, String tableName) throws SQLException {
+
+
+        this.mapSQL_JAVATypes.put("CHAR","string");
+        this.mapSQL_JAVATypes.put("VARCHAR","string");
+        this.mapSQL_JAVATypes.put("LONGVARCHAR","string");
+        this.mapSQL_JAVATypes.put("BIT","string");
+        this.mapSQL_JAVATypes.put("SHORT","number");
+        this.mapSQL_JAVATypes.put("INT","number");
+        this.mapSQL_JAVATypes.put("LONG","number");
+        this.mapSQL_JAVATypes.put("FLOAT","number");
+        this.mapSQL_JAVATypes.put("DOUBLE","number");
+        this.mapSQL_JAVATypes.put("DATE","date");
         Connection con=db.getConnection();
         DatabaseMetaData meta = con.getMetaData();
         ResultSet res = meta.getColumns(null, null, tableName, null);
-
-        while(res.next()){
-            if(mapSqlType.containsKey(res.getString("TYPE_NAME"))) {
-                this.tableSchema.add(new Column(res.getString("COLUMN_NAME"), mapSqlType.get(res.getString("TYPE_NAME"))));
-            }
+        while (res.next()) {
+            if(mapSQL_JAVATypes.containsKey(res.getString("TYPE_NAME")))
+                tableSchema.add(new Column(res.getString("COLUMN_NAME"),mapSQL_JAVATypes.get(res.getString("TYPE_NAME"))));
         }
         res.close();
+
     }
-    /**
-     *Metodo che restituisce il numero di colonne del database
-     * @return Rappreseta il numero di colonne, e quindi di attributi discreti o continui, presenti nella tabella del database
-     */
-    public int getNumberOfAttributes(){
-        return tableSchema.size();
+    public TableSchema(){
+        this.mapSQL_JAVATypes.put("CHAR","string");
+        this.mapSQL_JAVATypes.put("VARCHAR","string");
+        this.mapSQL_JAVATypes.put("LONGVARCHAR","string");
+        this.mapSQL_JAVATypes.put("BIT","string");
+        this.mapSQL_JAVATypes.put("SHORT","number");
+        this.mapSQL_JAVATypes.put("INT","number");
+        this.mapSQL_JAVATypes.put("LONG","floater");
+        this.mapSQL_JAVATypes.put("FLOAT","floater");
+        this.mapSQL_JAVATypes.put("DOUBLE","floater");
+        this.mapSQL_JAVATypes.put("DATE","date");
     }
-    /**
-     * Restituisce la colonna del database idicizzata dal parametro in input
-     * @param index indice della colonna che si vuole
-     * @return Column
-     */
+
+    public int getColumnNumber(){
+        return this.tableSchema.size();
+    }
+    public HashMap<String,String> getHashMap(){
+        return this.mapSQL_JAVATypes;
+    }
     public Column getColumn(int index){
         return tableSchema.get(index);
     }
-
     public Iterator<Column> iterator() {
 
         return tableSchema.iterator();
     }
-
 }

@@ -44,6 +44,17 @@ public class ControllerSoci implements Initializable {
         stage.show();
     }
 
+    @FXML
+    private void visualizzaSoci() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HomeApplication.class.getResource("sociArea/areaSoci-view.fxml"));
+        Parent root = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setResizable(false);
+        stage.setTitle("Gestionale Associativo - Visualizza soci");
+        stage.show();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
