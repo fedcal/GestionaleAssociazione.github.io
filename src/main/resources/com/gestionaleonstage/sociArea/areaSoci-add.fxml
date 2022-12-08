@@ -55,6 +55,5 @@
          </children>
       </Pane>
       <Button fx:id="socioInput" layoutX="243.0" layoutY="580.0" mnemonicParsing="false" onAction="#insertSocio" text="Inserisci Socio" />
-      <Label layoutX="24.0" layoutY="133.0" text="Consenso dati personali:" />
    </children>
 </AnchorPane>

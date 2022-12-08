@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Classe perr rappresentare l'entità Socio
  */
-public class Soci {
+public class Soci implements Comparable<Soci>{
    private int tessera;
    private Date dataIscrizione;
    private Date dataApprovazione;
@@ -185,5 +185,15 @@ public class Soci {
    public String toString(){
       String x="Nome: "+this.nome+" Cognome: "+this.cognome;
       return x;
+   }
+
+   @Override
+   public int compareTo(Soci o) {
+      if(this.nome.compareTo(o.getNome()) <0){
+         return -1;
+      } else if (this.nome.compareTo(o.getNome())>0) {
+         return 1;
+      }
+      return 0;
    }
 }
