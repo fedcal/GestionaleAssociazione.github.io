@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="661.0" prefWidth="962.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gestionaleonstage.soci.ControllerSociView">
+   <children>
+      <ListView fx:id="listaSociView" layoutX="14.0" layoutY="44.0" prefHeight="601.0" prefWidth="255.0" />
+      <Label layoutX="319.0" layoutY="14.0" text="Lista Soci" />
+      <Button layoutX="300.0" layoutY="273.0" mnemonicParsing="false" onAction="#infoSocio" prefHeight="26.0" prefWidth="60.0" text="Info" />
+      <Pane layoutX="412.0" layoutY="44.0" prefHeight="200.0" prefWidth="238.0" style="-fx-border-color: black;">
+         <children>
+            <Label layoutX="92.0" layoutY="6.0" text="Generalità" />
+            <Label layoutX="20.0" layoutY="39.0" text="Tessera:" />
+            <Label layoutX="20.0" layoutY="64.0" text="Nome:" />
+            <Label layoutX="20.0" layoutY="90.0" text="Cognome:" />
+            <Label layoutX="20.0" layoutY="118.0" text="Data di nascita:" />
+            <Label layoutX="20.0" layoutY="145.0" text="Luogo di nascita:" />
+            <Label fx:id="tessera" layoutX="146.0" layoutY="39.0" text="Tessera:" />
+            <Label fx:id="nome" layoutX="146.0" layoutY="64.0" text="Nome:" />
+            <Label fx:id="cognome" layoutX="146.0" layoutY="90.0" text="Cognome:" />
+            <Label fx:id="dataNascita" layoutX="147.0" layoutY="118.0" text="Nascita" />
+            <Label fx:id="luogoNascita" layoutX="147.0" layoutY="145.0" text="luogo" />
+         </children>
+      </Pane>
+      <Pane layoutX="412.0" layoutY="260.0" prefHeight="159.0" prefWidth="238.0" style="-fx-border-color: black;">
+         <children>
+            <Label layoutX="92.0" layoutY="5.0" text="Residenza" />
+            <Label layoutX="20.0" layoutY="39.0" text="Indirizzo:" />
+            <Label layoutX="20.0" layoutY="64.0" text="Città:" />
+            <Label layoutX="20.0" layoutY="90.0" text="CAP:" />
+            <Label layoutX="20.0" layoutY="118.0" text="Provincia:" />
+            <Label fx:id="indirizzo" layoutX="121.0" layoutY="39.0" text="Indirizzo:" />
+            <Label fx:id="citta" layoutX="121.0" layoutY="64.0" text="Città:" />
+            <Label fx:id="cap" layoutX="122.0" layoutY="90.0" text="CAP:" />
+            <Label fx:id="provincia" layoutX="123.0" layoutY="118.0" text="Provincia:" />
+         </children>
+      </Pane>
+      <Pane layoutX="412.0" layoutY="438.0" prefHeight="216.0" prefWidth="238.0" style="-fx-border-color: black;">
+         <children>
+            <Label layoutX="106.0" layoutY="6.0" text="Varie" />
+            <Label layoutX="20.0" layoutY="39.0" text="Email:" />
+            <Label layoutX="20.0" layoutY="64.0" text="Cellulare:" />
+            <Label layoutX="20.0" layoutY="90.0" text="Consenso dati:" />
+            <Label layoutX="20.0" layoutY="118.0" text="Minorenne:" />
+            <Label layoutX="20.0" layoutY="144.0" text="Data annullamento:" />
+            <Label layoutX="20.0" layoutY="168.0" text="Data Iscrizione:" />
+            <Label fx:id="email" layoutX="133.0" layoutY="39.0" text="Email:" />
+            <Label fx:id="cellulare" layoutX="133.0" layoutY="64.0" text="Cellulare:" />
+            <Label fx:id="consensoDati" layoutX="133.0" layoutY="90.0" text="Consenso dati:" />
+            <Label fx:id="minorenne" layoutX="133.0" layoutY="118.0" text="Minorenne:" />
+            <Label fx:id="dataAnnullamento" layoutX="133.0" layoutY="144.0" text="Data annullamento:" />
+            <Label fx:id="dataIscrizione" layoutX="133.0" layoutY="168.0" text="Data Iscrizione:" />
+         </children>
+      </Pane>
+      <Pane layoutX="692.0" layoutY="260.0" prefHeight="159.0" prefWidth="238.0" style="-fx-border-color: black;">
+         <children>
+            <Label layoutX="106.0" layoutY="6.0" text="Note" />
+            <Label fx:id="note" layoutX="20.0" layoutY="63.0" text="Indirizzo:" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

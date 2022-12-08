@@ -6,216 +6,194 @@ import java.util.Map;
 /**
  * Classe perr rappresentare l'entità Socio
  */
-public class Soci {
-    /**
-     * Numero della tesserra del socio
-     */
-    private int tessera;
-    /**
-     * Nome del socio
-     */
-    private String nome;
-    /**
-     * Cognome del socio
-     */
-    private String cognome;
-    /**
-     * Luogo di nascita
-     */
-    private String luogoNascita;
-    /**
-     * Indirizzo di residenza
-     */
-    private String via;
-    /**
-     * Città di residenza
-     */
-    private String citta;
-    /**
-     * Cap della città
-     */
-    private String cap;
-    /**
-     * Provincia della città di residenza
-     */
-    private String provincia;
-    /**
-     * Numero di cellulare
-     */
-    private String cellulare;
-    /**
-     * Email del socio
-     */
-    private String email;
-    /**
-     * Data di annullamento iscrizione
-     */
-    private Date annullamentoIscrizione;
-    /**
-     * Data presentazione domanda
-     */
-    private Date dataPresentazione;
-    /**
-     * Data di approvazione della domanda
-     */
-    private Date dataApprovazione;
-    /**
-     * Data di nascita
-     */
-    private Date dataNascita;
+public class Soci implements Comparable<Soci>{
+   private int tessera;
+   private Date dataIscrizione;
+   private Date dataApprovazione;
+   private String cognome;
+   private String nome;
+   private Date nascita;
+   private String luogoNascita;
+   private String via;
+   private String citta;
+   private String cap;
+   private String telefono;
+   private String provincia;
+   private String email;
+   private Date dataAnnullamento;
+   private String consenso;
+   private String minorenne;
+   private String note;
 
-    private Boolean minorenne;
+   public Soci(){}
+   public Soci(int tessera, Date dataIscrizione, Date dataApprovazione, String cognome, String nome, Date nascita, String luogoNascita, String via, String citta, String cap, String telefono, String provincia, String email, Date dataAnnullamento, String consenso, String minorenne, String note) {
+      this.tessera = tessera;
+      this.dataIscrizione = dataIscrizione;
+      this.dataApprovazione = dataApprovazione;
+      this.cognome = cognome;
+      this.nome = nome;
+      this.nascita = nascita;
+      this.luogoNascita = luogoNascita;
+      this.via = via;
+      this.citta = citta;
+      this.cap = cap;
+      this.telefono = telefono;
+      this.provincia = provincia;
+      this.email = email;
+      this.dataAnnullamento = dataAnnullamento;
+      this.consenso = consenso;
+      this.minorenne = minorenne;
+      this.note = note;
+   }
 
-    private Boolean consenso;
+   public int getTessera() {
+      return tessera;
+   }
 
-    public Soci(){
+   public void setTessera(int tessera) {
+      this.tessera = tessera;
+   }
 
-    }
+   public Date getDataIscrizione() {
+      return dataIscrizione;
+   }
 
-    public Soci(int tessera, String nome, String cognome, String luogoNascita, String via, String citta, String cap, String provincia, String cellulare, String email, Date annullamentoIscrizione, Date dataPresentazione, Date dataApprovazione, Date dataNascita, Boolean minorenne, Boolean consenso) {
-        this.tessera = tessera;
-        this.nome = nome;
-        this.cognome = cognome;
-        this.luogoNascita = luogoNascita;
-        this.via = via;
-        this.citta = citta;
-        this.cap = cap;
-        this.provincia = provincia;
-        this.cellulare = cellulare;
-        this.email = email;
-        this.annullamentoIscrizione = annullamentoIscrizione;
-        this.dataPresentazione = dataPresentazione;
-        this.dataApprovazione = dataApprovazione;
-        this.dataNascita = dataNascita;
-        this.minorenne = minorenne;
-        this.consenso = consenso;
-    }
+   public void setDataIscrizione(Date dataIscrizione) {
+      this.dataIscrizione = dataIscrizione;
+   }
 
-    public Boolean getMinorenne() {
-        return minorenne;
-    }
+   public Date getDataApprovazione() {
+      return dataApprovazione;
+   }
 
-    public void setMinorenne(Boolean minorenne) {
-        this.minorenne = minorenne;
-    }
+   public void setDataApprovazione(Date dataApprovazione) {
+      this.dataApprovazione = dataApprovazione;
+   }
 
-    public Boolean getConsenso() {
-        return consenso;
-    }
+   public String getCognome() {
+      return cognome;
+   }
 
-    public void setConsenso(Boolean consenso) {
-        this.consenso = consenso;
-    }
+   public void setCognome(String cognome) {
+      this.cognome = cognome;
+   }
 
-    public int getTessera() {
-        return tessera;
-    }
+   public String getNome() {
+      return nome;
+   }
 
-    public void setTessera(int tessera) {
-        this.tessera = tessera;
-    }
+   public void setNome(String nome) {
+      this.nome = nome;
+   }
 
-    public String getNome() {
-        return nome;
-    }
+   public Date getNascita() {
+      return nascita;
+   }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+   public void setNascita(Date nascita) {
+      this.nascita = nascita;
+   }
 
-    public String getCognome() {
-        return cognome;
-    }
+   public String getLuogoNascita() {
+      return luogoNascita;
+   }
 
-    public void setCognome(String cognome) {
-        this.cognome = cognome;
-    }
+   public void setLuogoNascita(String luogoNascita) {
+      this.luogoNascita = luogoNascita;
+   }
 
-    public String getLuogoNascita() {
-        return luogoNascita;
-    }
+   public String getVia() {
+      return via;
+   }
 
-    public void setLuogoNascita(String luogoNascita) {
-        this.luogoNascita = luogoNascita;
-    }
+   public void setVia(String via) {
+      this.via = via;
+   }
 
-    public String getVia() {
-        return via;
-    }
+   public String getCitta() {
+      return citta;
+   }
 
-    public void setVia(String via) {
-        this.via = via;
-    }
+   public void setCitta(String citta) {
+      this.citta = citta;
+   }
 
-    public String getCitta() {
-        return citta;
-    }
+   public String getCap() {
+      return cap;
+   }
 
-    public void setCitta(String citta) {
-        this.citta = citta;
-    }
+   public void setCap(String cap) {
+      this.cap = cap;
+   }
 
-    public String getCap() {
-        return cap;
-    }
+   public String getTelefono() {
+      return telefono;
+   }
 
-    public void setCap(String cap) {
-        this.cap = cap;
-    }
+   public void setTelefono(String telefono) {
+      this.telefono = telefono;
+   }
 
-    public String getProvincia() {
-        return provincia;
-    }
+   public String getProvincia() {
+      return provincia;
+   }
 
-    public void setProvincia(String provincia) {
-        this.provincia = provincia;
-    }
+   public void setProvincia(String provincia) {
+      this.provincia = provincia;
+   }
 
-    public String getCellulare() {
-        return cellulare;
-    }
+   public String getEmail() {
+      return email;
+   }
 
-    public void setCellulare(String cellulare) {
-        this.cellulare = cellulare;
-    }
+   public void setEmail(String email) {
+      this.email = email;
+   }
 
-    public String getEmail() {
-        return email;
-    }
+   public Date getdataAnnullamento() {
+      return dataAnnullamento;
+   }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+   public void setdataAnnullamento(Date dataAnnullamento) {
+      this.dataAnnullamento = dataAnnullamento;
+   }
 
-    public Date getAnnullamentoIscrizione() {
-        return annullamentoIscrizione;
-    }
+   public String getConsenso() {
+      return consenso;
+   }
 
-    public void setAnnullamentoIscrizione(Date annullamentoIscrizione) {
-        this.annullamentoIscrizione = annullamentoIscrizione;
-    }
+   public void setConsenso(String consenso) {
+      this.consenso = consenso;
+   }
 
-    public Date getDataPresentazione() {
-        return dataPresentazione;
-    }
+   public String getMinorenne() {
+      return minorenne;
+   }
 
-    public void setDataPresentazione(Date dataPresentazione) {
-        this.dataPresentazione = dataPresentazione;
-    }
+   public void setMinorenne(String minorenne) {
+      this.minorenne = minorenne;
+   }
 
-    public Date getDataApprovazione() {
-        return dataApprovazione;
-    }
+   public String getNote() {
+      return note;
+   }
 
-    public void setDataApprovazione(Date dataApprovazione) {
-        this.dataApprovazione = dataApprovazione;
-    }
+   public void setNote(String note) {
+      this.note = note;
+   }
 
-    public Date getDataNascita() {
-        return dataNascita;
-    }
+   public String toString(){
+      String x="Nome: "+this.nome+" Cognome: "+this.cognome;
+      return x;
+   }
 
-    public void setDataNascita(Date dataNascita) {
-        this.dataNascita = dataNascita;
-    }
+   @Override
+   public int compareTo(Soci o) {
+      if(this.nome.compareTo(o.getNome()) <0){
+         return -1;
+      } else if (this.nome.compareTo(o.getNome())>0) {
+         return 1;
+      }
+      return 0;
+   }
 }
