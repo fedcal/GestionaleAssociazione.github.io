@@ -1,6 +1,9 @@
 module:com.gestionaleonstage
 com.gestionaleonstage
+com.gestionaleonstage.database
+com.gestionaleonstage.entity
 com.gestionaleonstage.eventi
 com.gestionaleonstage.gestione
 com.gestionaleonstage.soci
 com.gestionaleonstage.sviluppo
+com.gestionaleonstage.test
