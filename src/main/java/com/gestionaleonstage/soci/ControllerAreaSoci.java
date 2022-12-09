@@ -81,7 +81,7 @@ public class ControllerAreaSoci implements Initializable {
                     String query="insert into socio values ("+
                             this.idTessera.getText()+", DATE '"+presentazioneY+"-"+presentazioneM+"-"+presentazioneG+"',"+"NULL"+",'"+this.cognome.getText()+"','"+this.nome.getText()+"',DATE '"+nascitaY+"-"+nascitaM+"-"+nascitaG+"','"+this.luogoNascita.getText()+"','"+
                             this.via.getText()+"','"+this.citta.getText()+"','"+this.cap.getText()+"','"+this.cellulare.getText()+"','"+this.provincia.getText()+"','"+this.email.getText()+"',"+"NULL"+",'"+consenso+"','"+minorenne+"',"+"NULL"+")";
-                    dbScript.insertSocio(query,dbConnection.getConnection());
+                    dbScript.triggerQuery(query,dbConnection.getConnection());
                     dbConnection.closeConnection();
                     Alert alert=new Alert(Alert.AlertType.INFORMATION);
                     alert.setContentText("Perfetto!!! Il socio è stato aggiunto.");

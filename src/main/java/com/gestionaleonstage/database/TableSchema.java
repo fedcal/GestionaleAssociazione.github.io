@@ -9,10 +9,26 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Classe per rappresentare lo schema di una tabella presente nel database
+ */
 public class TableSchema {
-    private List<Column> tableSchema=new ArrayList<Column>();
+    /**
+     * Schema contenente le colonne della tabella
+     */
+    private List<Column> tableSchema=new ArrayList<>();
+    /**
+     * Map contenente le relazioni tra i tipi in sql e i tipi in java
+     */
     private HashMap<String,String> mapSQL_JAVATypes=new HashMap<String, String>();
 
+    /**
+     * Costruttore di classe che avvalora l'hashmap e le colonne della tabella
+     *
+     * @param db DbConnection Connessione al database
+     * @param tableName String Nome della tabella di cui si vuole recuperare lo schema
+     * @throws SQLException Eccezione lanciata nel caso in cui non si riesca a ricavare lo schema della tabella
+     */
     public TableSchema(DbConnection db, String tableName) throws SQLException {
 
 
@@ -36,6 +52,10 @@ public class TableSchema {
         res.close();
 
     }
+
+    /**
+     * Costruttore di classe che avvalora l'attributo di classe HasMap
+     */
     public TableSchema(){
         this.mapSQL_JAVATypes.put("CHAR","string");
         this.mapSQL_JAVATypes.put("VARCHAR","string");
@@ -49,15 +69,35 @@ public class TableSchema {
         this.mapSQL_JAVATypes.put("DATE","date");
     }
 
+    /**
+     * Metodo che restituisce la dimensione della lista di colonne
+     * @return int numero di colonne presenti all'interno della tabella
+     */
     public int getColumnNumber(){
         return this.tableSchema.size();
     }
+
+    /**
+     * Restituisce il mapping che mette in correlazione i tipi dei valori in SQL con quelli di java
+     * @return HashMap {@literal <String,String>}
+     */
     public HashMap<String,String> getHashMap(){
         return this.mapSQL_JAVATypes;
     }
+
+    /**
+     * Restituisce la colonna relativa a una determinata posizione all'interno dello schema
+     * @param index int Posizione della colonna da restituire
+     * @return Column La colonna con i relativi valori
+     */
     public Column getColumn(int index){
         return tableSchema.get(index);
     }
+
+    /**
+     * Restituisce un iteratore sulla lista di colonne
+     * @return Iterator {@literal <Column>}
+     */
     public Iterator<Column> iterator() {
 
         return tableSchema.iterator();

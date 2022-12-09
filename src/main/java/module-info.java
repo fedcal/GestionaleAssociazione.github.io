@@ -6,10 +6,13 @@ module com.gestionaleonstage {
 
 
     opens com.gestionaleonstage to javafx.fxml;
-    opens com.gestionaleonstage.soci to javafx.fxml;
+    opens com.gestionaleonstage.sviluppo to javafx.fxml;
+    opens com.gestionaleonstage.database to javafx.fxml;
+    opens com.gestionaleonstage.entity to javafx.fxml;
     opens com.gestionaleonstage.eventi to javafx.fxml;
     opens com.gestionaleonstage.gestione to javafx.fxml;
-    opens com.gestionaleonstage.sviluppo to javafx.fxml;
+    opens com.gestionaleonstage.soci to javafx.fxml;
+    opens com.gestionaleonstage.test  to javafx.fxml;
 
 
     exports com.gestionaleonstage;

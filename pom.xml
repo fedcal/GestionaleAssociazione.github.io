@@ -100,9 +100,7 @@
                 <configuration>
                     <show>private</show>
                     <reportOutputDirectory>./documentation</reportOutputDirectory>
-                    <sourceFileIncludes>
-                        <include>com.gestionaleonstage.*</include>
-                    </sourceFileIncludes>
+
                 </configuration>
             </plugin>
             <plugin>
