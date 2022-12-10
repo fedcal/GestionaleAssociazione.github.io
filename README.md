@@ -4,7 +4,9 @@ Questo progetto nasce con l'intenzione di creare una desktop application che aiu
 organizzativa di un'associazione. L'implementazione è fatta basandomi sull'associazione [OnStage](https://www.instagram.com/onstageaps/),
 di cui faccio parte.
 
-In questa sezione descrivo il progetto, annotando tutti gli sviluppi, il setup dell'ambiente e come installarlo.
+In questa sezione descrivo il setup dell'ambiente e come installarlo. Per la documentazione del codice ho creato la seguente
+[pagina]() consultabile, mentre la descrizione del progetto comprensiva di analisi dei requisiti e successivi sviluppi
+viene riportata nel mio [blog personale](https://www.federicocalo.dev/blog)
 
 ## Analisi dei requisiti
 
