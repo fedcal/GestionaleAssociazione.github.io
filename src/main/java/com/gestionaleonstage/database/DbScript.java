@@ -13,12 +13,12 @@ import java.util.LinkedList;
  */
 public class DbScript {
     /**
-     * Cotruttore di classe di default
+     * Costruttore di classe di default
      */
     public DbScript(){}
 
     /**
-     * Inizializzaziione della tabella soci
+     * Inizializzazione della tabella soci
      * @param db Connection - connessione al db
      */
     public void initTableSoci(Connection db) throws SQLException {
@@ -57,15 +57,13 @@ public class DbScript {
     }
 
     /**
-     * Metodo per ottenere i soci all'interno del database
-     * @param db connessione al database
-     * @return LinkediList - Lista di soci
+     * Metodo per eseguire query sul db che inseriscono, modificano o elimina alcuni campi nel database
+     * @param query String query sql da eseguire
+     * @param db Connection connessione al database
+     * @return boolean Se la query è stata eseguita
+     * @throws SQLException può lanciare questa eccezione se la query non viene eseguita correttamente
      */
-    public LinkedList<Soci> obtainSoci(Connection db){
-        //TODO implement obtainSoci that retrival soci's info from dataabse
-        return null;
-    }
-    public boolean insertSocio(String query, Connection db) throws SQLException {
+    public boolean triggerQuery(String query, Connection db) throws SQLException {
         boolean queryDone=false;
         Statement statement=db.createStatement();
         int rs = statement.executeUpdate(query);

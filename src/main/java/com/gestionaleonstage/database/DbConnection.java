@@ -8,18 +8,26 @@ import java.sql.SQLException;
  * Classe di supporto per la connessione al database
  */
 public class DbConnection {
-    private static String DRIVER_CLASS_NAME = "com.mysql.cj.jdbc.Driver";/** Driver esterno per la gestione del database*/
-    private final String DBMS = "jdbc:mysql";/** Nome del DBMS**/
-    private final String SERVER = "localhost";/**Contiene l'identificativo del server su cui risiede la base di dati*/
-    private final String DATABASE = "associazione";/**Contiene il nome della base di dati*/
-    private final int PORT = 3306;/**La porta su cui il DBMS MySQL accetta le connessioni*/
-    private final String USER_ID = "root";/**Contiene il nome dell'utente per l'accesso alla base di dati*/
-    private final String PASSWORD = "root";/**Contiene la password di autenticazione per l'utente identificato da USER_ID*/
-    private Connection conn;/**Gestisce la connessione*/
+    /** Driver esterno per la gestione del database*/
+    private static String DRIVER_CLASS_NAME = "com.mysql.cj.jdbc.Driver";
+    /** Nome del DBMS**/
+    private final String DBMS = "jdbc:mysql";
+    /**Contiene l'identificativo del server su cui risiede la base di dati*/
+    private final String SERVER = "localhost";
+    /**Contiene il nome della base di dati*/
+    private final String DATABASE = "associazione";
+    /**La porta su cui il DBMS MySQL accetta le connessioni*/
+    private final int PORT = 3306;
+    /**Contiene il nome dell'utente per l'accesso alla base di dati*/
+    private final String USER_ID = "root";
+    /**Contiene la password di autenticazione per l'utente identificato da USER_ID*/
+    private final String PASSWORD = "root";
+    /**Connettore al database*/
+    private Connection conn;
 
     /**
-     * Costruttore di classe chje istanzia la connessione al database. Può generare un'eccezione di tip SQL
-     * se non riesce a connettersi o di altro tiipo se non riesce a trovare il driver o non ha i permessi per accedere
+     * Costruttore di classe che istanzia la connessione al database. Può generare un'eccezione di tip SQL
+     * se non riesce a connettersi o di altro tipo se non riesce a trovare il driver o non ha i permessi per accedere
      */
     public DbConnection(){
         try{
