@@ -10,44 +10,98 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+/**
+ * Controller area soci
+ */
 public class ControllerAreaSoci implements Initializable {
-
+    /**
+     * fx:id relativo al DatePicker per la selezione della data di presentazione della domanda
+     */
     @FXML
     private DatePicker datePresentazione;
+    /**
+     * fx:id relativo al DatePicker per la selezione della data di nascita del socio
+     */
     @FXML
     private DatePicker dateNascita;
-
+    /**
+     * fx:id relativo al RadioButton per la selezionare se il socio è minorenne
+     */
     @FXML
     private RadioButton minorenneNegativo;
+    /**
+     * fx:id relativo al RadioButton per la selezionare se il socio è maggiorenne
+     */
     @FXML
     private RadioButton minorennePositivo;
+    /**
+     * fx:id relativo al TextField per inserire l'id della tessera
+     */
     @FXML
     private TextField idTessera;
+    /**
+     * fx:id relativo al TextField per inserire il nome del socio
+     */
     @FXML
     private TextField nome;
+    /**
+     * fx:id relativo al TextField per inserire il cognome del socio
+     */
     @FXML
     private TextField cognome;
+    /**
+     * fx:id relativo al TextField per inserire il luogo di nascita del socio
+     */
     @FXML
     private TextField luogoNascita;
+    /**
+     * fx:id relativo al TextField per inserire il cap del paese in cui il socio risiede
+     */
     @FXML
     private TextField cap;
+    /**
+     * fx:id relativo al TextField per inserire l'indirizzo in cui il socio risiede
+     */
     @FXML
     private TextField via;
+    /**
+     * fx:id relativo al TextField per inserire la città in cui il socio risiede
+     */
     @FXML
     private TextField citta;
+    /**
+     * fx:id relativo al TextField per inserire la provincia
+     */
     @FXML
     private TextField provincia;
+    /**
+     * fx:id relativo al RadioButton relativo al consenso positivo del socio per il trattamento dei dati
+     */
     @FXML
     private RadioButton consensoPositivo;
+    /**
+     * fx:id relativo al RadioButton relativo al consenso negativo del socio per il trattamento dei dati
+     */
     @FXML
     private RadioButton consensoNegativo;
+    /**
+     * fx:id relativo al TextField per inserire il numero di cellulare del socio
+     */
     @FXML
     private TextField cellulare;
+    /**
+     * fx:id relativo al TextField per inserire l'email del socio
+     */
     @FXML
     private TextField email;
 
+    /**
+     * Metodo per inserire un socio all'interno del database, può generare delle eccezioni di tipo SQL che vengono
+     * opportunamente gestite
+     *
+     */
     @FXML
-    private void insertSocio() throws SQLException {
+    private void insertSocio() {
         boolean checked=false;
         if(consensoNegativo.isSelected() || consensoPositivo.isSelected()){
             checked=true;
@@ -95,7 +149,11 @@ public class ControllerAreaSoci implements Initializable {
             }
         }
 
-
+    /**
+     * Metedo per inizializzare la view dell'area per aggiungere i soci.
+     * @param url URL Url relativo al file FXML della view
+     * @param resourceBundle ResourceBundle Bundle della risorsa
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ToggleGroup toggleGroup = new ToggleGroup();
@@ -106,6 +164,10 @@ public class ControllerAreaSoci implements Initializable {
         this.minorennePositivo.setToggleGroup(toggleGroup2);
 
     }
+
+    /**
+     * Funzione che pulisce tutti i campi dopo l'inserimento di un utente
+     */
     private void clearField(){
         this.idTessera.clear();
         this.nome.clear();
