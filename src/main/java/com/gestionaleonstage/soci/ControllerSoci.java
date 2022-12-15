@@ -44,9 +44,15 @@ public class ControllerSoci {
         stage.show();
     }
 
+    /**
+     * Metodo per visualizzare la vista per modificare i soci
+     */
     public void modificaSoci( ) {
     }
 
+    /**
+     * metodo per l'export dei soci
+     */
     public void exportSoci() {
     }
 }
