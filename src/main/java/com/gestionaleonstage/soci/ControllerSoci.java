@@ -44,4 +44,9 @@ public class ControllerSoci {
         stage.show();
     }
 
+    public void modificaSoci( ) {
+    }
+
+    public void exportSoci() {
+    }
 }

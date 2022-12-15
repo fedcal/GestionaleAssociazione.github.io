@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 /**
- * Controller relatico alla sezione di sviluppo dedita alla gestione di acount e impostazioni del sistema
+ * Controller relativo alla sezione di sviluppo dedita alla gestione di account e impostazioni del sistema
  */
 public class ControllerSviluppo {
     /**
