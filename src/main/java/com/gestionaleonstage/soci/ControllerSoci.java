@@ -3,40 +3,25 @@ package com.gestionaleonstage.soci;
 import com.gestionaleonstage.HomeApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
+
 
 /**
- * Contrroller Soci
+ * Controller Soci
  */
-public class ControllerSoci implements Initializable {
-    /**
-     * fx:id relativo all'aggiunta di un nuovo membro
+public class ControllerSoci {
+      /**
+     * Funzione per aprire la view relativa all'aggiunta di un socio
+     * @throws IOException Exception generata in caso non viene trovato il file FXML relativo
      */
-    @FXML
-    private Button btnAggiungiMembro;
-    /**
-     * fx:id relativo alla visualizzazione dei membri
-     */
-    @FXML
-    private Button btnVisualizzaMembro;
-    /**
-     * fx:id relativo alla modifica dei membri
-     */
-    @FXML
-    private Button btnModificaMembro;
-
     @FXML
     private void addSoci() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HomeApplication.class.getResource("sociArea/areaSoci-add.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
+        Parent root = fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setResizable(false);
@@ -44,10 +29,14 @@ public class ControllerSoci implements Initializable {
         stage.show();
     }
 
+    /**
+     * Funzione per aprire la view relativa alla visualizzazione di un socio
+     * @throws IOException Exception generata in caso non viene trovato il file FXML relativo
+     */
     @FXML
     private void visualizzaSoci() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HomeApplication.class.getResource("sociArea/areaSoci-view.fxml"));
-        Parent root = (Parent) fxmlLoader.load();
+        Parent root = fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setResizable(false);
@@ -55,8 +44,15 @@ public class ControllerSoci implements Initializable {
         stage.show();
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    /**
+     * Metodo per visualizzare la vista per modificare i soci
+     */
+    public void modificaSoci( ) {
+    }
 
+    /**
+     * metodo per l'export dei soci
+     */
+    public void exportSoci() {
     }
 }
