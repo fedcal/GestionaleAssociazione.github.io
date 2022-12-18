@@ -83,6 +83,7 @@
     </dependencies>
 
     <build>
+
         <plugins>
             <!--build-->
             <plugin>
@@ -95,6 +96,7 @@
                             <goal>single</goal>
                         </goals>
                         <configuration>
+                            <outputDirectory>./eseguibile</outputDirectory>
                             <archive>
                                 <manifest>
                                     <mainClass>com.gestionaleonstage.Launcher</mainClass>
