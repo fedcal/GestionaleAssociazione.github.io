@@ -3,3 +3,6 @@ Maven realese on github: https://www.youtube.com/watch?v=SbQ5lL8lw8o
 Documentazione push
 
 git subtree push --prefix documentation/apidocs origin gh-pages
+
+
+Playlist Apache POI: https://www.youtube.com/watch?v=ipjl49Hgsg8&list=PLUDwpEzHYYLsN1kpIjOyYW6j_GLgOyA07

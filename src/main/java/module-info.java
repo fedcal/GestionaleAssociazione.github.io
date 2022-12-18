@@ -3,6 +3,8 @@ module com.gestionaleonstage {
     requires javafx.fxml;
     requires java.sql;
     requires junit;
+    requires poi.ooxml;
+    requires poi;
 
 
     opens com.gestionaleonstage to javafx.fxml;

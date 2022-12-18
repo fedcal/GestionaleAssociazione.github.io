@@ -6,7 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 
@@ -53,6 +56,9 @@ public class ControllerSoci {
     /**
      * metodo per l'export dei soci
      */
-    public void exportSoci() {
+    public void exportSoci() throws IOException {
+        String filePath= "./EstrazioneDati/soci.xlsx";
+        FileInputStream inputStream=new FileInputStream(filePath);
+        XSSFWorkbook fileExcel=new XSSFWorkbook(inputStream);
     }
 }
