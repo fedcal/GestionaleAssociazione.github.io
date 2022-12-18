@@ -241,7 +241,9 @@ public class ControllerSociView implements Initializable {
             }
             dbConnection.closeConnection();
         }catch (Exception e){
-            e.printStackTrace();
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Attenzione!!!\n Non è stato possibile recuperare la lsita dei soci");
+            alert.show();
         }
     }
 }
