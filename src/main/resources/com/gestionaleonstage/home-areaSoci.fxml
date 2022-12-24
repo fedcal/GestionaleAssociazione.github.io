@@ -10,6 +10,6 @@
     <Button fx:id="btnAggiungiMembro" layoutX="7.0" layoutY="46.0" mnemonicParsing="false" onAction="#addSoci" prefHeight="25.0" prefWidth="128.0" text="Aggiungi Socio" />
     <Button fx:id="btnVisualizzaMembro" layoutX="185.0" layoutY="46.0" mnemonicParsing="false" onAction="#visualizzaSoci" prefHeight="25.0" prefWidth="128.0" text="Visualizza Soci" />
     <Button fx:id="btnModificaMembro" layoutX="7.0" layoutY="124.0" mnemonicParsing="false" onAction="#modificaSoci" prefHeight="25.0" prefWidth="128.0" text="Modifica Socio" />
-      <Button fx:id="btnExport" layoutX="185.0" layoutY="124.0" mnemonicParsing="false" onAction="#exportSoci" prefHeight="25.0" prefWidth="128.0" text="Modifica Socio" />
+      <Button fx:id="btnExport" layoutX="185.0" layoutY="124.0" mnemonicParsing="false" onAction="#exportSoci" prefHeight="25.0" prefWidth="128.0" text="Export Soci" />
 </children>
 </AnchorPane>

@@ -1,7 +1,6 @@
 package com.gestionaleonstage.entity;
 
-import java.util.Date;
-import java.util.Map;
+
 
 /**
  * Classe per rappresentare l'entità Socio
@@ -14,11 +13,11 @@ public class Soci implements Comparable<Soci>{
    /**
     * Data di iscrizione
     */
-   private Date dataIscrizione;
+   private String dataIscrizione;
    /**
     * Data di approvazione della domanda
     */
-   private Date dataApprovazione;
+   private String dataApprovazione;
    /**
     * Cognome del socio
     */
@@ -30,7 +29,7 @@ public class Soci implements Comparable<Soci>{
    /**
     * Data di nascita del socio
     */
-   private Date nascita;
+   private String nascita;
    /**
     * Luogo di nascita del socio
     */
@@ -62,7 +61,7 @@ public class Soci implements Comparable<Soci>{
    /**
     * Data annullamento dell'iscrizione del socio
     */
-   private Date dataAnnullamento;
+   private String dataAnnullamento;
    /**
     * Consenso del socio al trattamento dei dati personali
     */
@@ -84,11 +83,11 @@ public class Soci implements Comparable<Soci>{
    /**
     * Costruttore di classe che avvalora gli attributi di classe
     * @param tessera int Numero identificativo di tessera
-    * @param dataIscrizione Date Data di iscrizione, nel formato "yyyy-mm-dd"
-    * @param dataApprovazione Date Data di approvazione dell'iscrizione, nel formato "yyyy-mm-dd"
+    * @param dataIscrizione String Data di iscrizione, nel formato "yyyy-mm-dd"
+    * @param dataApprovazione String Data di approvazione dell'iscrizione, nel formato "yyyy-mm-dd"
     * @param cognome String Cognome del socio
     * @param nome String Nome del socio
-    * @param nascita Date Data di nascita del socio, nel formato "yyyy-mm-dd"
+    * @param nascita String Data di nascita del socio, nel formato "yyyy-mm-dd"
     * @param luogoNascita String Luogo di nascita del socio
     * @param via String Indirizzo di residenza del socio
     * @param citta String Città di residenza
@@ -96,12 +95,12 @@ public class Soci implements Comparable<Soci>{
     * @param telefono String Numero di telefono
     * @param provincia String Provincia di residenza del socio
     * @param email String Email di recapito del socio
-    * @param dataAnnullamento Date Data di annullamento della richiesta del socio, nel formato "yyyy-mm-dd"
+    * @param dataAnnullamento String Data di annullamento della richiesta del socio, nel formato "yyyy-mm-dd"
     * @param consenso String Consenso del socio al trattamento dei dati personali
     * @param minorenne String Verifica se il socio è minorenne
     * @param note String Note particolari relative al socio
     */
-   public Soci(int tessera, Date dataIscrizione, Date dataApprovazione, String cognome, String nome, Date nascita, String luogoNascita, String via, String citta, String cap, String telefono, String provincia, String email, Date dataAnnullamento, String consenso, String minorenne, String note) {
+   public Soci(int tessera, String dataIscrizione, String dataApprovazione, String cognome, String nome, String nascita, String luogoNascita, String via, String citta, String cap, String telefono, String provincia, String email, String dataAnnullamento, String consenso, String minorenne, String note) {
       this.tessera = tessera;
       this.dataIscrizione = dataIscrizione;
       this.dataApprovazione = dataApprovazione;
@@ -139,17 +138,17 @@ public class Soci implements Comparable<Soci>{
 
    /**
     * Metodo per ottenere la data di iscrizione del socio
-    * @return Date Formato "yyyy-mm-dd"
+    * @return String Formato "yyyy-mm-dd"
     */
-   public Date getDataIscrizione() {
+   public String getDataIscrizione() {
       return dataIscrizione;
    }
 
    /**
     * Metodo per impostare la data di iscrizione del socio
-    * @param dataIscrizione   Date Formato "yyyy-mm-dd"
+    * @param dataIscrizione   String Formato "yyyy-mm-dd"
     */
-   public void setDataIscrizione(Date dataIscrizione) {
+   public void setDataIscrizione(String dataIscrizione) {
       this.dataIscrizione = dataIscrizione;
    }
 
@@ -157,7 +156,7 @@ public class Soci implements Comparable<Soci>{
     * Metodo per ottenere la data di approvazione della richiesta di iscrizione del socio
     * @return String
     */
-   public Date getDataApprovazione() {
+   public String getDataApprovazione() {
       return dataApprovazione;
    }
 
@@ -165,7 +164,7 @@ public class Soci implements Comparable<Soci>{
     * Metodo per impostare la data di approvazione della richiesta di iscrizione del socio
     * @param dataApprovazione String
     */
-   public void setDataApprovazione(Date dataApprovazione) {
+   public void setDataApprovazione(String dataApprovazione) {
       this.dataApprovazione = dataApprovazione;
    }
 
@@ -203,17 +202,17 @@ public class Soci implements Comparable<Soci>{
 
    /**
     * Metodo per ottenere la data di nascita
-    * @return Date Formato "yyyy-mm-dd"
+    * @return String Formato "yyyy-mm-dd"
     */
-   public Date getNascita() {
+   public String getNascita() {
       return nascita;
    }
 
    /**
     * Metodo per impostare la data di nascita del socio
-    * @param nascita Date Formato "yyyy-mm-dd"
+    * @param nascita String Formato "yyyy-mm-dd"
     */
-   public void setNascita(Date nascita) {
+   public void setNascita(String nascita) {
       this.nascita = nascita;
    }
 
@@ -331,17 +330,17 @@ public class Soci implements Comparable<Soci>{
 
    /**
     * Metodo per ottener la data di annullamento del socio
-    * @return Date Formato data "yyyy-mm-dd"
+    * @return String Formato data "yyyy-mm-dd"
     */
-   public Date getdataAnnullamento() {
+   public String getdataAnnullamento() {
       return dataAnnullamento;
    }
 
    /**
     * Metodo per impostare la data di annullamento della domanda di iscrizione del socio
-    * @param dataAnnullamento Date Formato data "yyyy-mm-dd"
+    * @param dataAnnullamento String Formato data "yyyy-mm-dd"
     */
-   public void setdataAnnullamento(Date dataAnnullamento) {
+   public void setdataAnnullamento(String dataAnnullamento) {
       this.dataAnnullamento = dataAnnullamento;
    }
 
@@ -398,7 +397,9 @@ public class Soci implements Comparable<Soci>{
     * @return String
     */
    public String toString(){
-      String x="Nome: "+this.nome+" Cognome: "+this.cognome;
+
+      String x="Tessera: "+this.tessera+" Data Iscrizione: "+this.dataIscrizione +" Data Approvazione: "+this.dataApprovazione +" Nome: "+this.nome+" Cognome: "+this.cognome+ " Data Nascita: "+this.nascita+" Luogo nascita: "+this.luogoNascita +" Indirizzo: "+ this.via +" Citta: "+this.citta
+              +" CAP: "+this.cap+ " Telefono: "+this.telefono +" Provincia: "+this.provincia+" Email: "+email+" DataAnnullamento: "+this.dataAnnullamento+" Consenso: "+this.consenso+" Minorenne: "+this.minorenne+" Note: "+this.note;
       return x;
    }
 

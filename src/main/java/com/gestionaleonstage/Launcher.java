@@ -2,6 +2,7 @@ package com.gestionaleonstage;
 
 import com.gestionaleonstage.database.DbConnection;
 import com.gestionaleonstage.database.DbScript;
+import com.gestionaleonstage.util.FolderTree;
 
 import java.sql.SQLException;
 
@@ -14,7 +15,7 @@ public class Launcher {
      * @param args argomenti dell'applicazione
      */
     public static void main(String[] args) throws SQLException {
-
+        FolderTree folderTree= new FolderTree();
         DbConnection dbConnection=new DbConnection();
         DbScript dbScript=new DbScript();
         dbScript.initTableSoci(dbConnection.getConnection());

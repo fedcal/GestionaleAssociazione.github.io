@@ -1,1 +1,1 @@
-java -jar GestionaleOnStage-1.0-SNAPSHOT-jar-with-dependencies.jar
+java -jar "GestionaleOnStage-0.0.1 - PreRealese-jar-with-dependencies.jar"

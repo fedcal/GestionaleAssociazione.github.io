@@ -133,7 +133,7 @@ public class ControllerAreaSoci implements Initializable {
                     presentazioneY=presentazioneSplit[2];
 
                     String query="insert into socio values ("+
-                            this.idTessera.getText()+", DATE '"+presentazioneY+"-"+presentazioneM+"-"+presentazioneG+"',"+"NULL"+",'"+this.cognome.getText()+"','"+this.nome.getText()+"',DATE '"+nascitaY+"-"+nascitaM+"-"+nascitaG+"','"+this.luogoNascita.getText()+"','"+
+                            this.idTessera.getText()+", '"+presentazioneY+"-"+presentazioneM+"-"+presentazioneG+"',"+"NULL"+",'"+this.cognome.getText()+"','"+this.nome.getText()+"', '"+nascitaY+"-"+nascitaM+"-"+nascitaG+"','"+this.luogoNascita.getText()+"','"+
                             this.via.getText()+"','"+this.citta.getText()+"','"+this.cap.getText()+"','"+this.cellulare.getText()+"','"+this.provincia.getText()+"','"+this.email.getText()+"',"+"NULL"+",'"+consenso+"','"+minorenne+"',"+"NULL"+")";
                     dbScript.triggerQuery(query,dbConnection.getConnection());
                     dbConnection.closeConnection();

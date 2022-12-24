@@ -35,12 +35,10 @@ public class TableData {
      */
     public LinkedList<Example> getTransazioni(String query, String table) throws SQLException, EmptySetException {
         LinkedList<Example> transazioni= new LinkedList<>();
-        boolean emptySet=true;
         Statement statement= this.db.getConnection().createStatement();
         ResultSet rs=statement.executeQuery(query);
         TableSchema tSchema = new TableSchema(db, table);
         while(rs.next()){
-            emptySet=false;
             Example currentTuple= new Example();
             for (int i=0; i<tSchema.getColumnNumber();i++){
                 if(tSchema.getColumn(i).isNumber()){

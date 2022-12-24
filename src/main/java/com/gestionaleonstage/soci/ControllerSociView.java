@@ -134,7 +134,7 @@ public class ControllerSociView implements Initializable {
                     this.tessera.setText(Integer.toString(socio.getTessera()));
                     this.nome.setText(socio.getNome());
                     this.cognome.setText(socio.getCognome());
-                    this.dataNascita.setText(socio.getNascita() == null ? " " : new SimpleDateFormat("dd-MM-yyyy").format(socio.getNascita()));
+                    this.dataNascita.setText(socio.getNascita() == null ? " " : socio.getNascita());
                     this.luogoNascita.setText(socio.getLuogoNascita());
                     this.indirizzo.setText(socio.getVia());
                     this.citta.setText(socio.getCitta());
@@ -145,8 +145,8 @@ public class ControllerSociView implements Initializable {
                     this.cellulare.setText(socio.getTelefono());
                     this.consensoDati.setText(socio.getConsenso());
                     this.minorenne.setText(socio.getMinorenne());
-                    this.dataAnnullamento.setText(socio.getdataAnnullamento() == null ? "" : new SimpleDateFormat("dd-MM-yyyy").format(socio.getdataAnnullamento()));
-                    this.dataIscrizione.setText(new SimpleDateFormat("dd-MM-yyyy").format(socio.getDataIscrizione()));
+                    this.dataAnnullamento.setText(socio.getdataAnnullamento() == null ? "" : socio.getdataAnnullamento());
+                    this.dataIscrizione.setText(socio.getDataIscrizione());
                 }
             }
         }
@@ -216,14 +216,16 @@ public class ControllerSociView implements Initializable {
             for (Example tran : trans) {
                 Soci socio = new Soci();
                 socio.setTessera(Integer.parseInt(tran.get(0).toString()));
-                socio.setDataIscrizione(new SimpleDateFormat("yyyy-MM-dd").parse(tran.get(1).toString()));
+                socio.setDataIscrizione(tran.get(1).toString());
 
                 if (tran.get(2) != null)
-                    socio.setDataApprovazione(new SimpleDateFormat("yyyy-MM-dd").parse(tran.get(2).toString()));
+                    socio.setDataApprovazione(tran.get(2).toString());
+                else
+                    socio.setDataApprovazione("");
 
                 socio.setCognome(tran.get(3).toString());
                 socio.setNome(tran.get(4).toString());
-                socio.setNascita(new SimpleDateFormat("yyyy-MM-dd").parse(tran.get(5).toString()));
+                socio.setNascita(tran.get(5).toString());
                 socio.setLuogoNascita(tran.get(6).toString());
                 socio.setVia(tran.get(7).toString());
                 socio.setCitta(tran.get(8).toString());
@@ -232,11 +234,15 @@ public class ControllerSociView implements Initializable {
                 socio.setProvincia(tran.get(11).toString());
                 socio.setEmail(tran.get(12).toString());
                 if (tran.get(13) != null)
-                    socio.setdataAnnullamento(new SimpleDateFormat("yyyy-MM-dd").parse(tran.get(13).toString()));
+                    socio.setdataAnnullamento(tran.get(13).toString());
+                else
+                    socio.setdataAnnullamento("");
                 socio.setConsenso(tran.get(14).toString());
                 socio.setMinorenne(tran.get(15).toString());
                 if (tran.get(16) != null)
                     socio.setNote(tran.get(16).toString());
+                else
+                    socio.setNote("");
                 this.elencoSoci.add(socio);
             }
             dbConnection.closeConnection();

@@ -10,7 +10,7 @@ public class Example {
     /**
      * Lista rappresentante la riga all'interno della tabella
      */
-    private List<Object> example=new ArrayList<Object>();
+    private List<Object> example=new ArrayList<>();
 
     /**
      * Costruttore di base della classe

@@ -24,10 +24,10 @@ public class DbScript {
     public void initTableSoci(Connection db) throws SQLException {
 
         //SOCI
-        String querySoci= " create table if not exists socio(tessera int primary key, data_iscrizione date not null, data_approvazione date" +
-                ", cognome varchar(50) not null, nome varchar(50) not null, nascita date not null, luogo_nascita varchar(50), via varchar(150) not null," +
+        String querySoci= "create table if not exists socio(tessera int primary key, data_iscrizione varchar(50) not null, data_approvazione varchar(50)" +
+                ", cognome varchar(50) not null, nome varchar(50) not null, nascita varchar(50) not null, luogo_nascita varchar(50), via varchar(150) not null," +
                 "citta varchar(50) not null,cap varchar(10), telefono varchar(15) not null, provincia varchar(50) not null, email varchar(200) not null," +
-                "data_annullamento date, consenso varchar(5), minorenne varchar(5),note varchar(500) )";
+                "data_annullamento varchar(50), consenso varchar(5), minorenne varchar(5),note varchar(500))";
 
         Statement statement=db.createStatement();
         int rs = statement.executeUpdate(querySoci);
